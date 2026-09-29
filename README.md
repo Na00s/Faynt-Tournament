@@ -43,13 +43,13 @@ From this directory, inspect the existing match interface:
 
 The equivalent 75M Base comparison uses `Faynt-75M-Base/checkpoint.pt`. Use a new artifact label for each game. Faynt occupies P1 in the existing Faynt match runners. Select `--p2 slippi-ai` for the pinned Slippi-AI release, or `--p2 cpu --cpu-level 9` for CPU evaluation. The same named flags expose the existing single-game interfaces; each runner validates its supported characters and checkpoint contract before gameplay.
 
-Checkpoint formats matter. The Base and Expert `.pt` files use the historical training envelopes. Expert winners also have fixed benchmark paths. The paper's Arena zero-delay schedules use the recorded Ali benchmark envelopes and their native-checkpoint attestations. Published Arena policy exports and Transformers `model.safetensors` packages have separate loading interfaces. Use the companion benchmark suite's Arena entry point and its declared envelope preparation when reproducing those schedules.
+The Faynt family has three stages: Base is pretrained, Expert adds supervised curricula and 10M distillation, and Arena adds reinforcement learning. Checkpoint formats determine the loader. Base and Expert `.pt` files use historical training envelopes. The final Arena expanded schedules use recorded benchmark envelopes and native-checkpoint attestations. Their `d0` names describe Faynt's zero added delay; those public Slippi-AI opponents retain 21- or 24-frame queues. The companion benchmark repository's `evaluation/` runtime loads the native `checkpoint.pt` files for all six Base, Expert, and Arena models. Transformers `model.safetensors` packages use the model-card inference interface. Follow the companion Arena queue's envelope preparation when reproducing its historical schedule.
 
 The local match runtime uses a continuous 256-frame ring cache, FP32, temperature 1, next-frame action alignment, and zero added Faynt delay. It resets the cache at the start of each game. The model's trained sequence length is also 256; the original actor's 128-frame trajectory-context setting is separate from the cache capacity. These settings form part of the checkpoint and benchmark contracts.
 
 ## Baseline tournament
 
-The standard tournament scheduler supports MIMIC and Slippi-AI. Its default schedule runs the matchup in both controller-port assignments:
+The standard tournament scheduler registers MIMIC's Fox checkpoint and Slippi-AI `medium-v2` for Fox mirrors. Faynt comparisons use the single-game and benchmark runners described above. Integrating a new policy requires a source adapter and its identity, controller, state-reset, and timing checks. Its default schedule runs the matchup in both controller-port assignments:
 
 ```bash
 ./scripts/tournament \
