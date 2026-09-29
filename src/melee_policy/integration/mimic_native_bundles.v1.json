@@ -1,0 +1,952 @@
+{
+  "schema_version": "integration.mimic_external_bundle_manifest.v1",
+  "artifact_repository": "https://huggingface.co/erickfm/MIMIC",
+  "asset_directory": ".e012-cache/mimic-native-0629eb17",
+  "source_repository": "https://github.com/erickfm/MIMIC.git",
+  "source_directory": ".e012-cache/mimic-source-current",
+  "bundles": [
+    {
+      "name": "bowser",
+      "character": "BOWSER",
+      "run_name": "bowser-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "870dfd38d6365fecbde17761310b5801ec73e0e74fb75527eb4ecfe77ed259fb",
+          265256104
+        ],
+        "config.json": [
+          "006e52c0ffc45db8caf9958cbf8c6ee522916151a553bef1c461842826d46f96",
+          1155
+        ],
+        "metadata.json": [
+          "564b5542dc5de333afa8169059e1c390474ef80c5a74faea50156297badc900a",
+          374
+        ],
+        "mimic_norm.json": [
+          "aed6f21e23674d555a9fb0ad1e9de3e4afc681b73e2ce387a52cbc46476add0b",
+          2040
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "f355e4292f84b5cb297bbca45252adfadfeb40d44e364c5fb1117d43c3957b39",
+          2094
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "22ca7b37408c1f6977694b4e5a92a51faeb2183210be989062a0e1f8ec27c836",
+          8021
+        ]
+      }
+    },
+    {
+      "name": "cptfalcon",
+      "character": "CPTFALCON",
+      "run_name": "cptfalcon-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "14fc5eacd1b00ea258f6ed2ad7ddaea2e96e3f2e8c86306092b7727d75635187",
+          265259503
+        ],
+        "config.json": [
+          "05b8a44bd69c82c32e32ddd3f4bcaafe6180c2f9a71a09b09e66bbd91f58c3da",
+          1158
+        ],
+        "metadata.json": [
+          "5e99f30a4a75f374b9f277cb006b8295710ceb0516d943ba5eb2884a7e9b0a6d",
+          389
+        ],
+        "mimic_norm.json": [
+          "5c11ec7556b9a86aa669c2030494b7570de65ebb4f2a0383e77d06a933553276",
+          2024
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "b4164ac23f0df04445048496dc38fb66118d996432e85d64d02231a26690306c",
+          2162
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "440cffa1013edf5995992ea99b58416661b74b96e444571fa89603273e421555",
+          7994
+        ]
+      }
+    },
+    {
+      "name": "dk",
+      "character": "DK",
+      "run_name": "dk-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "c0b080d8652abce3684322d40ca81d25a53430c9d14e172832e8eeb6b6055e4e",
+          345252561
+        ],
+        "config.json": [
+          "44830342a56f7601403b0e303fd7f673bac425c5a1800eb3a44c7d2038b86834",
+          1151
+        ],
+        "metadata.json": [
+          "36a9f327ee321b6d7892d84f3a567ce8f226e60729fc4a98ef5ada911ada251c",
+          371
+        ],
+        "mimic_norm.json": [
+          "8b95348e1aede2f94d14775855b36148923f1a582f7fe077f5bc83a0ce2d2bf6",
+          2027
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "a18fbbaac7c213c032301fdfc8d184cd1c30e9a4322ce5f7a12ebb58c480b989",
+          2204
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "26805b6bf30b2d19438806b1c28890462329061acc06cfd92aa4e9a07ee67756",
+          8002
+        ]
+      }
+    },
+    {
+      "name": "doc",
+      "character": "DOC",
+      "run_name": "doc-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "459e3e2b02017d8d4c547dd4609f51970eef6ee26566cca3dbdada72b2ce03a0",
+          345253183
+        ],
+        "config.json": [
+          "276efc374e564c843e7ee59bbab7385ffeb555fdb0e9deec81636df33ea5ad09",
+          1152
+        ],
+        "metadata.json": [
+          "8ff4a2205204b32c237f404ad0368e06a0773cd8595eac7002d273ab88be00af",
+          371
+        ],
+        "mimic_norm.json": [
+          "73a5bf6eb76e5809a5d9bb371ff1dc83ce852b5302362b333136325487b75f98",
+          2023
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "28ba8b4645eaeeff3cd00901aa6536dd89552676bef82b92c6393bfb18817853",
+          2273
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "45cffed3b7066b7b3384318da7a36fa27ff848f9c4f834f2ab42faa4c0673a33",
+          7995
+        ]
+      }
+    },
+    {
+      "name": "falco",
+      "character": "FALCO",
+      "run_name": "falco-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "5083b30df7bf1516fe536d5b95262d90c85d4483e7b8fe124aeddc135af11196",
+          265257515
+        ],
+        "config.json": [
+          "89f63b8aa0c80f3d3f9274f569a8b5df87ecbb7103f2fad35dc9f3673088915c",
+          1154
+        ],
+        "metadata.json": [
+          "a7bc665c954a5f11499a40eb5190e4cdfdfb81cb6f51e8ba9a3f0432565e9940",
+          373
+        ],
+        "mimic_norm.json": [
+          "ecd12527534ee88e1f2efd400f23aa9bf214d581017c6bb638ab646f75278465",
+          2027
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "820a644afce10632ce7fb50a3ea3bafc1afe24f8b8d515c02da54bc37ba8c164",
+          2197
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "2e0deea38869c803dfab96e2e7fbda69eb2dfc20100956fcfb879f17c7f771f4",
+          8012
+        ]
+      }
+    },
+    {
+      "name": "fox-master",
+      "character": "FOX",
+      "run_name": "fox-mastfox-20260717-cstick9-nomirror",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "af020445bd5ac4ad00c368c9e530c21c0a762348b33c1393a56e42478206a1a2",
+          345239517
+        ],
+        "config.json": [
+          "61ede5f9fc0b37a35b95f44eb31343168f371bfdc24b6d774c5e7223e715472d",
+          1163
+        ],
+        "metadata.json": [
+          "694a2cef67db33d1ac440477c9afb4a92f4d88f810d160a121f199b44f11e92d",
+          389
+        ],
+        "mimic_norm.json": [
+          "087dffcd816be8e5a40c1bebf63a016feafe9ddd831bb22f7d16019f52584e70",
+          2038
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "fa696f39c3a4b6e0bccbfe2296a86962ffd8bef8e9c35ec4bb9e179637384648",
+          2132
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "31022db33d94ceabd18e0ab07d16b05426fb067058be372b0a4e0142be94dd12",
+          8021
+        ]
+      }
+    },
+    {
+      "name": "gameandwatch",
+      "character": "GAMEANDWATCH",
+      "run_name": "gameandwatch-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "b2692fcec81979c645fe99225f86ee11af9f964ee8fe70b4a80f0a86429f81ed",
+          265259054
+        ],
+        "config.json": [
+          "720d8eeac462b800148bbaec828be048f72d8ab73b4b9220d1d259f5147041ae",
+          1161
+        ],
+        "metadata.json": [
+          "bf4d572ec9a2482bb177faca0f55951e713f5237405bce4184b74931be6deff8",
+          396
+        ],
+        "mimic_norm.json": [
+          "dd709dd4c880a4ef6ea7d0a5427af3c820bb26c258ff017c1b99abb9d3c7d5a4",
+          2020
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "81e93072289810df016c8d79df3362291665033de4427e9802f6ba88ea2bd1d7",
+          2056
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "b5b76910557ff979755ea843e05eeb288d8c6d3a9ea3d247287aa870888d810d",
+          7992
+        ]
+      }
+    },
+    {
+      "name": "ganondorf",
+      "character": "GANONDORF",
+      "run_name": "ganondorf-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "ffd9c76c6576357df4ba8b1b84c3e0ad1558472c215da821607aa0ff2c24730c",
+          345257043
+        ],
+        "config.json": [
+          "0c8521af3ad99fc3326a1f38cf54e59e40278c51dbb8a15f066e54bbf17b62bb",
+          1158
+        ],
+        "metadata.json": [
+          "cd68930d544bbd33fd08c7a084ad89c9c5dfc68c67c0b04fead113b036ae174a",
+          383
+        ],
+        "mimic_norm.json": [
+          "9caa84b7564a5fb86e2fad0d38e385de4ccefedcbc2effea17e5a426d458a12b",
+          2037
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "d6a996d9d35d17a8a2637ffd2ced471a0b399b460a693c804f28d53e84d49f7c",
+          2237
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "3bb5177d7722d6544fa05d9ff035a19da35dc20113807bc11466fb7e353dfff6",
+          8061
+        ]
+      }
+    },
+    {
+      "name": "ice_climbers",
+      "character": "POPO",
+      "run_name": "ice_climbers-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "4c5037f48868500e8730fb9f462f6a1d9455e073c9f82d2b037837c6fbf3b04f",
+          345260061
+        ],
+        "config.json": [
+          "22950c0a6f7e57816331564e55a31058af04a172877e3a537bf5fa3a26d6dbd4",
+          1161
+        ],
+        "metadata.json": [
+          "526a1f2aab625c494da93e31d85a2d299c6acdcc85477c7637dc68064fcbaf50",
+          384
+        ],
+        "mimic_norm.json": [
+          "ffa3d525d6e734806cc669a2e6c6026db2bfd0fac248053aa2ab4a77d897b63f",
+          2026
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "d98937ee7e51ae888921df1b8abfb13c296e896e8864f053127fc12b65a45c63",
+          2302
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "5619077c6b1cedb4b00f246ee691ebe7fe150dbe1eaf6f1e377fc9b0eb5f4678",
+          8008
+        ]
+      }
+    },
+    {
+      "name": "link",
+      "character": "LINK",
+      "run_name": "link-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "bd227f2a37f51ee6c2a5fa33449bea4bb531f237b60c543952a520961929a524",
+          265254310
+        ],
+        "config.json": [
+          "798aded5adf9978d2dd749a155206345a446300421af904e8ed0746f1d8d67d5",
+          1153
+        ],
+        "metadata.json": [
+          "a24ebcd3292391a75029c5c4b841882eec3f0ebeda42560416ed4111acaf7786",
+          368
+        ],
+        "mimic_norm.json": [
+          "f4c2145037543dd8ec21f2db3640a5aaca6b47f48465798a6c7a39e684293c3d",
+          2040
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "58aa1f498bdfff9c9d9738c3b415db14c59a352fb64703e15eb2758b8b6dd953",
+          2247
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "b65cadfc79ac3ea6c81333af47ef50eb0232954e59848dc73a0fb2061b210c02",
+          8018
+        ]
+      }
+    },
+    {
+      "name": "luigi",
+      "character": "LUIGI",
+      "run_name": "luigi-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "eeaf96faa9c385cbdd034fbe5b509a5e3d6f5ae41d9d27549c8930ade3a41df2",
+          265254759
+        ],
+        "config.json": [
+          "aee069d3261c3fbd529687ea3796a22b79eba5dcd71e72b60ad0bf510ae10694",
+          1154
+        ],
+        "metadata.json": [
+          "856e5ac7a682f97d2633349e4da8861f125ea2fd1ea255baddc68b97aa745a93",
+          371
+        ],
+        "mimic_norm.json": [
+          "28b5093fd495447725c201e3f9ef4b0d9ceeb29a3f734608c2639163278b3a0c",
+          2026
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "ce69853fc89121c4f4318607c110901de5926acc4e4b030563b0d6db4a8e92e4",
+          2185
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "2591b0db82d1864765fda6f8c082c0310bff033e3f132c12dd605f2467fa308c",
+          7992
+        ]
+      }
+    },
+    {
+      "name": "mario",
+      "character": "MARIO",
+      "run_name": "mario-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "19740b53a7c41858859db1369b0405c23a36758a2bd6bf4d46b12f0653084a60",
+          345254299
+        ],
+        "config.json": [
+          "c79c39088ce88a60eac5e26c54ca5110c25a63bc758d3b3de2a2e8119d2b2798",
+          1154
+        ],
+        "metadata.json": [
+          "d9a640e0f2012e32da18652c0cf7cac90c5308c0c8ec6aafbb70e6e0056ba795",
+          371
+        ],
+        "mimic_norm.json": [
+          "0ef3947f0680f6f5d593be7fad397a1210b147202babf603a61b0c3662181db2",
+          2035
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "ca0cd5e738d29c5f51202a068e85ad82f8db792c9168426f9153b7c847c76220",
+          2059
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "9f10fe7999739ef8a577e6f7e3dd1992ecb7ef0653542da751ed263c992d6027",
+          8012
+        ]
+      }
+    },
+    {
+      "name": "marth",
+      "character": "MARTH",
+      "run_name": "marth-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "df0170bd7f9c66fc21ec404d6bf8b1f0c6253ea84791c28979cb6684d94e258d",
+          345254299
+        ],
+        "config.json": [
+          "b4814f0eff2fa61b884ee11f18fa7b68b7f8df8e53a25142db65f0799e3d6843",
+          1154
+        ],
+        "metadata.json": [
+          "0bd3857474105811fd6e5bd3f8d78f7b5e7474d64681f53eebdfbc5dda1d57f6",
+          373
+        ],
+        "mimic_norm.json": [
+          "6971fa1d9204e925d902f344475b64f0b8e061801b9febc9f9fac229dde8d4a4",
+          2041
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "dab5042a47c1fa2a3e193b4043e8a07c3a736369fd2567bc9e13206872b9413a",
+          2216
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "e87ebf9edaa7b11299223b33fe42159dd09f1b118573638d7481fc9f77f734f1",
+          8023
+        ]
+      }
+    },
+    {
+      "name": "mewtwo",
+      "character": "MEWTWO",
+      "run_name": "mewtwo-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "806a4b4342ba59e49c8ee89322d108c999f84315f79f45011dcc0fbf199e1496",
+          265258156
+        ],
+        "config.json": [
+          "9c2e2d50b1cdcff709d42caf694b7ab4d9fec4c5aeed21abfea49ed2374ee426",
+          1155
+        ],
+        "metadata.json": [
+          "6b489a86b4d25b098051c8bdbba1f3aa2a558596a527319ef438b6e9a794d3be",
+          374
+        ],
+        "mimic_norm.json": [
+          "5ec20743c517db6501cec16d0b6dd2add9c43264925c0d1d532e070f46e6a4b5",
+          2035
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "463450269e452f188eb74239c120b67e43de2fcea7515448668adc40c456a30b",
+          2262
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "746f5da14a5007b6be78bda3e7dd730336e6381547c17cda8c9fe0e43cc001c9",
+          7989
+        ]
+      }
+    },
+    {
+      "name": "ness",
+      "character": "NESS",
+      "run_name": "ness-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "453d2135da5cd14761b237d8a63ad5304b174e327aa2ef6fbd7ff58b3886ebcf",
+          265257066
+        ],
+        "config.json": [
+          "a139654d76407739d7c6e38147b2652ff5a07d54ced6f1a5a89914adb119f35e",
+          1153
+        ],
+        "metadata.json": [
+          "e1afe077d908c0f060421fde9af22ab4eec99bf39a1ed424cdc6f5dcbfaac830",
+          368
+        ],
+        "mimic_norm.json": [
+          "7dd2d1d48406ab537b2f74c4a195881a5af9ebfd23c96cb902366a36af4a9c3f",
+          2040
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "2455e378ee12c4c760e9fefb8b10a393d55735fa7888522fef74b35bb4604ec5",
+          2041
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "f649714deea47705f81efb9d14160bcd22ff95e24248673d1f06ffa828808cea",
+          8015
+        ]
+      }
+    },
+    {
+      "name": "peach",
+      "character": "PEACH",
+      "run_name": "peach-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "d72c65d535fb60d0211c65bbabad7e008ee33942c9abee75ffec67fb88bdf476",
+          265257515
+        ],
+        "config.json": [
+          "a3c39356b83227421f76b58bc110957067536680c80e360d2cdfd5a11c97246c",
+          1154
+        ],
+        "metadata.json": [
+          "978a0c00c116b41e8ff08c393a6088df33f5addb7557672265e9b2dc988d27df",
+          372
+        ],
+        "mimic_norm.json": [
+          "5db284f9b6d71c15cb0bf5443f4453b370a86900e90e7cd345f5b875950b76e6",
+          2042
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "0f0a26bf6dfa2e99be9b9cd8b078768fd748e5d691e198b51af72c7043f8bffc",
+          2330
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "7aa12e530fb88f34fb1fb398e0016efe8bfe882164c3a1110caa62b661002b27",
+          8027
+        ]
+      }
+    },
+    {
+      "name": "pikachu",
+      "character": "PIKACHU",
+      "run_name": "pikachu-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "2d168b4d815e7a36466a29b3eae910c723c38348014d0c2015bfc813cae5d35f",
+          265256553
+        ],
+        "config.json": [
+          "fa6845744d467b40da1dfd63e4da185ae78275f9bdd86bc9065a0834995d0580",
+          1156
+        ],
+        "metadata.json": [
+          "12acbf5717f0a365adc32f550cf8aa3ffee16f8446da3a22a0df1c09dcf9ca43",
+          377
+        ],
+        "mimic_norm.json": [
+          "9af4e5a74af5a988caad79aecf4116ad230b2d2e71c2c5648e53663ca7c5423c",
+          2022
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "95acdbbb2d52ae3e18a1a26c6f1790f5e9d8a18e3daa077b70717a6f38a9a42f",
+          2108
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "241e6caeaf167105e4bf515c85b500693dd53d36222bda36f1366ef1bbeaa73c",
+          7984
+        ]
+      }
+    },
+    {
+      "name": "puff",
+      "character": "JIGGLYPUFF",
+      "run_name": "puff-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "3d716c89674dfdfb689c099999f4580186127ecbc87150ed6b30604c2136f917",
+          345253741
+        ],
+        "config.json": [
+          "dda506435188c7363a007b4432ff5483772988ce485a64edf0fb328a1c8d919f",
+          1153
+        ],
+        "metadata.json": [
+          "01f86fc5e0397f300ce3b0eb59df978825cc7e3e9bfbe916141e589ab8e674c0",
+          382
+        ],
+        "mimic_norm.json": [
+          "e3eba978ea66cde352ce7bfe6bce80cc3dd6f249afefe60a9f2257440b3dc62e",
+          2022
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "61c3d5e06006e1d19132a61a5eb2496201e9f083bd8a8022a0ceb31dd91b9756",
+          2213
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "37717b92952a27698a27cfea223fc99c600196906979bd33f887df62a79690e7",
+          8027
+        ]
+      }
+    },
+    {
+      "name": "roy",
+      "character": "ROY",
+      "run_name": "roy-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "19aa05716e566aa2650d738f5e0015407cfa24860e7e0bfd3f623ea3455593e0",
+          345253183
+        ],
+        "config.json": [
+          "7a7d492be64490673e6b82d8d0cd6216812240c78cbf7272310b56d4af46ad81",
+          1152
+        ],
+        "metadata.json": [
+          "e5d55c05a53a9fa616c1f60111d438543909fa15ed0f9e7ed0ff6aebf4896ab4",
+          365
+        ],
+        "mimic_norm.json": [
+          "5aceae6fa0b164b647535569a9e6afa8f36db0051e877b0a4e457f60bc9bb01a",
+          2021
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "1d2a2036cd8dab5912b3739140ceb1b9ffaac550eb90b3048258684006aa29b1",
+          2055
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "bfcfda7478f5728cab3c270f5c746b9c006e4a7cbd883e29034d4e083640bf8f",
+          7990
+        ]
+      }
+    },
+    {
+      "name": "samus",
+      "character": "SAMUS",
+      "run_name": "samus-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "551e70ca9d4eaa2243c317e148247a673ad4376fde2de04ab0eb7afde05485fb",
+          345254299
+        ],
+        "config.json": [
+          "2b9fe4ab26b63ccfb80813532e94b994f572c7084d5ab16f226b695c07e665e7",
+          1154
+        ],
+        "metadata.json": [
+          "c574e01181d7e2e0d18bf71b34c9b1858e55f0ddb26508f67247f7cc9ec6e8fd",
+          373
+        ],
+        "mimic_norm.json": [
+          "3e56826d6519581119a4c385af0ca548e6ee89bbfa8c166df4e2db26c3ba7fe2",
+          2023
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "ec610aedd050e6b27638076baf45264934ef3af1aa059a614cccf80634e839e8",
+          2264
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "20fa3c86a2d7be6edf4f35cb475a692932e0970fc846bd3ecd2843401ea92c60",
+          7992
+        ]
+      }
+    },
+    {
+      "name": "sheik",
+      "character": "SHEIK",
+      "run_name": "sheik-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "93d6eaec8dda0251da564c928e55e170cfac4648764d98b486fbd9189e03d090",
+          345254299
+        ],
+        "config.json": [
+          "b8190f471be552344af96d53c76f411a5a3d754c0001300e92071b522c8cbd8f",
+          1154
+        ],
+        "metadata.json": [
+          "fb1861c5fd7394edfac810dee0810105cc5367210f8cee98a2e9fcb3aea011dc",
+          373
+        ],
+        "mimic_norm.json": [
+          "d92ac1e1b2f596c091abf93fc7b525fc94decc167164223d6e4778d29ce153ca",
+          2024
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "a525a274a7b102350b05dff8fa73de475f78c17d1d30e4bc5a7405224c9605d5",
+          2251
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "62501e4eb2f0e9e0e377b4c2f2a618ed6af7296680b9380137bab1f434bd9ce4",
+          7991
+        ]
+      }
+    },
+    {
+      "name": "ylink",
+      "character": "YLINK",
+      "run_name": "ylink-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "06d6699010fa746c6beccab221ff461e96a85a4f74face33df3b0d1201699a2e",
+          265257515
+        ],
+        "config.json": [
+          "ac0f3b3c85c659e50387f5a876804f550fc085ca5ac703994179175b68a7a662",
+          1154
+        ],
+        "metadata.json": [
+          "54259531a8a5343c255ddef53e4523041beb6e73421cc77b7a50c60a866e5eae",
+          376
+        ],
+        "mimic_norm.json": [
+          "9ed84bb43736c25955c6ffae2de14e61f3c126f5860e66f1e1cfe0e63d5f27ba",
+          2033
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "34a76c3f66f9503d2a74fa3818a7e102ab60f652b0fedeb124b25c557a4aa9fa",
+          2130
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "6d3122f86095472707b8e1944b1af764fd8613a76829ac200f435f413f322b14",
+          8024
+        ]
+      }
+    },
+    {
+      "name": "yoshi",
+      "character": "YOSHI",
+      "run_name": "yoshi-20260719-master-c9-s99",
+      "artifact_revision": "0629eb174bb7548038469f538d98b3691ea647be",
+      "source_revision": "01eb974962c8338147518dd360ddbf4b9d4c48e3",
+      "assets": {
+        "model.pt": [
+          "3f9464c0c08a3f2a9b538625b6a7298a1b8743ccd26956a661b15b958a5bce59",
+          265254759
+        ],
+        "config.json": [
+          "d308c14a1f7a673774530c88007944acfbfd5ce3293880964cf43c07ea057a74",
+          1154
+        ],
+        "metadata.json": [
+          "83fc195e1106aa5fad0c86c7c106038d321122e50da8063b6eb19550a365bd4a",
+          371
+        ],
+        "mimic_norm.json": [
+          "8695199de847242554ce372c07778a15954725a3934ed2bc175a4a505882f724",
+          2040
+        ],
+        "controller_combos.json": [
+          "939f65efb7823836ca2d38df2ffb39aafd0018eea2066f399424c2e4ba75a01b",
+          129
+        ],
+        "cat_maps.json": [
+          "03e3a5378d3163c35aecdcdba6da00075ac44dfd0b8a5fb27b96e605efc77523",
+          2196
+        ],
+        "stick_clusters.json": [
+          "f1dc69b7620189674064ca8661ac0fe50b79f7ad3db60f73892cc3f7ba9ad36c",
+          1424
+        ],
+        "norm_stats.json": [
+          "3024e1f0beff95e7f824519c12f8e2db888d19efee1dbb65475f1ae4a6aa16a4",
+          8013
+        ]
+      }
+    }
+  ]
+}

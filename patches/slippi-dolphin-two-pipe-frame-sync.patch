@@ -1,0 +1,344 @@
+diff --git a/Source/Core/InputCommon/ControllerInterface/ControllerInterface.cpp b/Source/Core/InputCommon/ControllerInterface/ControllerInterface.cpp
+index f85e7a2..0cb3f4c 100644
+--- a/Source/Core/InputCommon/ControllerInterface/ControllerInterface.cpp
++++ b/Source/Core/InputCommon/ControllerInterface/ControllerInterface.cpp
+@@ -5,6 +5,7 @@
+ #include <mutex>
+ 
+ #include "Common/Thread.h"
++#include "Core/ConfigManager.h"
+ #include "InputCommon/ControllerInterface/ControllerInterface.h"
+ 
+ #ifdef CIFACE_USE_XINPUT
+@@ -35,6 +36,8 @@
+ 
+ using namespace ciface::ExpressionParser;
+ 
++extern bool g_needInputForFrame; // from EXI_DeviceSlippi.cpp
++
+ namespace
+ {
+ const ControlState INPUT_DETECT_THRESHOLD = 0.55;
+@@ -206,12 +209,23 @@ void ControllerInterface::RemoveDevice(std::function<bool(const ciface::Core::De
+ //
+ void ControllerInterface::UpdateInput()
+ {
+-	// Don't block the UI or CPU thread (to avoid a short but noticeable frame drop)
+-	if (m_devices_mutex.try_lock())
++	const bool blocking_pipes = SConfig::GetInstance().m_blockingPipes;
++	if (blocking_pipes)
++		m_devices_mutex.lock();
++	else if (!m_devices_mutex.try_lock())
++		return;
++
++	std::lock_guard<std::mutex> lk(m_devices_mutex, std::adopt_lock);
++	const bool frame_wait = blocking_pipes && g_needInputForFrame;
++	for (const auto& d : m_devices)
++		d->UpdateInput();
++
++	if (frame_wait)
+ 	{
+-		std::lock_guard<std::mutex> lk(m_devices_mutex, std::adopt_lock);
+-		for (const auto& d : m_devices)
+-			d->UpdateInput();
++#ifdef CIFACE_USE_PIPES
++		ciface::Pipes::ValidateFrameSyncTransaction();
++#endif
++		g_needInputForFrame = false;
+ 	}
+ }
+ 
+diff --git a/Source/Core/InputCommon/ControllerInterface/Pipes/Pipes.cpp b/Source/Core/InputCommon/ControllerInterface/Pipes/Pipes.cpp
+index 9808088..cf55c0d 100644
+--- a/Source/Core/InputCommon/ControllerInterface/Pipes/Pipes.cpp
++++ b/Source/Core/InputCommon/ControllerInterface/Pipes/Pipes.cpp
+@@ -2,7 +2,10 @@
+ // Licensed under GPLv2+
+ // Refer to the license.txt file included.
+ 
++#include <algorithm>
+ #include <array>
++#include <cerrno>
++#include <cstdio>
+ #include <cstdlib>
+ #include <fcntl.h>
+ #include <iostream>
+@@ -24,6 +27,8 @@ namespace ciface
+ {
+ namespace Pipes
+ {
++static std::vector<PipeDevice*> s_pipe_registry;
++
+ static const std::array<std::string, 12> s_button_tokens{
+     {"A", "B", "X", "Y", "Z", "START", "L", "R", "D_UP", "D_DOWN", "D_LEFT", "D_RIGHT"}};
+ 
+@@ -93,6 +98,10 @@ void PopulateDevices()
+ 
+ PipeDevice::PipeDevice(PIPE_FD fd, const std::string& name) : m_fd(fd), m_name(name)
+ {
++  if (m_name.rfind("slippibot", 0) == 0 && m_name.size() == 10 &&
++      m_name[9] >= '1' && m_name[9] <= '4')
++    m_slippi_port = m_name[9] - '1';
++  s_pipe_registry.push_back(this);
+   for (const auto& tok : s_button_tokens)
+   {
+     PipeInput* btn = new PipeInput("Button " + tok);
+@@ -112,6 +121,9 @@ PipeDevice::PipeDevice(PIPE_FD fd, const std::string& name) : m_fd(fd), m_name(n
+ 
+ PipeDevice::~PipeDevice()
+ {
++  s_pipe_registry.erase(
++      std::remove(s_pipe_registry.begin(), s_pipe_registry.end(), this),
++      s_pipe_registry.end());
+   #ifdef _WIN32
+   CloseHandle(m_fd);
+   #else
+@@ -160,28 +172,110 @@ s32 PipeDevice::readFromPipe(PIPE_FD file_descriptor, char *in_buffer, size_t si
+   #endif
+ }
+ 
+-void PipeDevice::UpdateInput()
++void PipeDevice::AcceptFrameSyncTransaction()
+ {
+-  bool finished = false;
+-  #ifndef _WIN32
+-  if(SConfig::GetInstance().m_blockingPipes && g_needInputForFrame)
++  m_last_accepted_sync_sequence = m_update_sync_sequence;
++}
++
++void ValidateFrameSyncTransaction()
++{
++  if (!SConfig::GetInstance().m_blockingPipes)
++    return;
++
++  std::array<PipeDevice*, 2> pipes{{nullptr, nullptr}};
++  for (PipeDevice* device : s_pipe_registry)
++  {
++    const int port = device->GetSlippiPort();
++    if (port < 0 || port > 1)
++      continue;
++    if (pipes[port] != nullptr)
++    {
++      std::fputs("PipeDevice: duplicate strict Slippi controller port\n", stderr);
++      std::abort();
++    }
++    pipes[port] = device;
++  }
++  if (pipes[0] == nullptr || pipes[1] == nullptr)
+   {
+-    fd_set set;
+-    FD_ZERO (&set);
+-    FD_SET (m_fd, &set);
++    std::fputs("PipeDevice: frame sync requires Slippi controller ports 1 and 2\n", stderr);
++    std::abort();
++  }
+ 
+-    // Wait for activity on the socket
+-    select(m_fd+1, &set, NULL, NULL, NULL);
++  for (PipeDevice* pipe : pipes)
++  {
++    if (!pipe->SawFrameSyncFlush() || pipe->GetFrameSyncKind() == FrameSyncKind::None ||
++        pipe->GetFrameSyncSequence() == 0 ||
++        pipe->GetFrameSyncSequence() <= pipe->GetLastAcceptedFrameSyncSequence())
++    {
++      std::fputs("PipeDevice: missing, malformed, or stale frame-sync transaction\n", stderr);
++      std::abort();
++    }
+   }
+-  #endif
++  if (pipes[0]->GetFrameSyncKind() != pipes[1]->GetFrameSyncKind() ||
++      pipes[0]->GetFrameSyncSequence() != pipes[1]->GetFrameSyncSequence())
++  {
++    std::fputs("PipeDevice: controller frame-sync transaction mismatch\n", stderr);
++    std::abort();
++  }
++  pipes[0]->AcceptFrameSyncTransaction();
++  pipes[1]->AcceptFrameSyncTransaction();
++}
++
++void PipeDevice::UpdateInput()
++{
++  m_update_saw_flush = false;
++  m_update_sync_kind = FrameSyncKind::None;
++  m_update_sync_sequence = 0;
++  bool finished = false;
++  const bool wait_for_inputs = SConfig::GetInstance().m_blockingPipes && g_needInputForFrame;
++  auto parse_buffered_commands = [&]() {
++    std::size_t newline = m_buf.find("\n");
++    while (!finished && newline != std::string::npos)
++    {
++      const std::string command = m_buf.substr(0, newline);
++      finished = ParseCommand(command);
++      m_buf.erase(0, newline + 1);
++      newline = m_buf.find("\n");
++    }
++  };
++
++  parse_buffered_commands();
++  if (finished)
++    return;
++
+   do
+   {
++    #ifndef _WIN32
++    if(wait_for_inputs)
++    {
++      // select() mutates the descriptor set, so rebuild it after EINTR and
++      // before every read needed to complete a partial transaction.
++      int selected = 0;
++      do
++      {
++        fd_set set;
++        FD_ZERO (&set);
++        FD_SET (m_fd, &set);
++        selected = select(m_fd+1, &set, NULL, NULL, NULL);
++      } while (selected < 0 && errno == EINTR);
++      if (selected <= 0)
++      {
++        std::fputs("PipeDevice: controller pipe wait failed\n", stderr);
++        std::abort();
++      }
++    }
++    #endif
++
+     // Read any pending characters off the pipe. If we hit a newline,
+     // then dequeue a command off the front of m_buf and parse it.
+     char buf[32];
+     s32 bytes_read = readFromPipe(m_fd, buf, sizeof buf);
+     if (bytes_read == 0) {
+-      // Pipe died, so just quit out
++      if (wait_for_inputs)
++      {
++        std::fputs("PipeDevice: controller pipe closed\n", stderr);
++        std::abort();
++      }
+       return;
+     }
+     while (bytes_read > 0)
+@@ -189,16 +283,8 @@ void PipeDevice::UpdateInput()
+       m_buf.append(buf, bytes_read);
+       bytes_read = readFromPipe(m_fd, buf, sizeof buf);
+     }
+-    std::size_t newline = m_buf.find("\n");
+-    while (newline != std::string::npos)
+-    {
+-      std::string command = m_buf.substr(0, newline);
+-      finished = ParseCommand(command);
+-
+-      m_buf.erase(0, newline + 1);
+-      newline = m_buf.find("\n");
+-    }
+-  } while(!finished && g_needInputForFrame && SConfig::GetInstance().m_blockingPipes);
++    parse_buffered_commands();
++  } while(!finished && wait_for_inputs);
+ }
+ 
+ void PipeDevice::AddAxis(const std::string& name, double value)
+@@ -230,11 +316,51 @@ bool PipeDevice::ParseCommand(const std::string& command)
+ {
+   if(command == "FLUSH")
+   {
+-    g_needInputForFrame = false;
++    // Let ControllerInterface.cpp clear the flag after all PipeDevices
++    // have been queried.
++    if (!SConfig::GetInstance().m_blockingPipes)
++      g_needInputForFrame = false;
++    m_update_saw_flush = true;
++    m_update_sync_kind = m_pending_sync_kind;
++    m_update_sync_sequence = m_pending_sync_sequence;
++    m_pending_sync_kind = FrameSyncKind::None;
++    m_pending_sync_sequence = 0;
+     return true;
+   }
+   std::vector<std::string> tokens;
+   SplitString(command, ' ', tokens);
++  if (!tokens.empty() && tokens[0] == "FRAME_SYNC")
++  {
++    // A malformed marker explicitly makes the following FLUSH untagged.
++    m_pending_sync_kind = FrameSyncKind::None;
++    m_pending_sync_sequence = 0;
++    if (tokens.size() != 3)
++      return false;
++
++    std::istringstream sequence_stream(tokens[1]);
++    u64 sequence = 0;
++    sequence_stream >> sequence;
++    if (!sequence_stream || !sequence_stream.eof() || sequence == 0)
++      return false;
++
++    FrameSyncKind kind = FrameSyncKind::None;
++    if (tokens[2] == "menu")
++      kind = FrameSyncKind::Menu;
++    else if (tokens[2] == "gameplay")
++      kind = FrameSyncKind::Gameplay;
++    else if (tokens[2] == "preamble")
++      kind = FrameSyncKind::Preamble;
++    else if (tokens[2] == "internal")
++      kind = FrameSyncKind::Internal;
++    else if (tokens[2] == "unscoped")
++      kind = FrameSyncKind::Unscoped;
++    else
++      return false;
++
++    m_pending_sync_kind = kind;
++    m_pending_sync_sequence = sequence;
++    return false;
++  }
+   if (tokens.size() < 2 || tokens.size() > 4)
+     return false;
+   if (tokens[0] == "PRESS" || tokens[0] == "RELEASE")
+diff --git a/Source/Core/InputCommon/ControllerInterface/Pipes/Pipes.h b/Source/Core/InputCommon/ControllerInterface/Pipes/Pipes.h
+index 4ced507..4e40b43 100644
+--- a/Source/Core/InputCommon/ControllerInterface/Pipes/Pipes.h
++++ b/Source/Core/InputCommon/ControllerInterface/Pipes/Pipes.h
+@@ -34,9 +34,23 @@ namespace Pipes
+ // {PRESS, RELEASE} {A, B, X, Y, Z, START, L, R, D_UP, D_DOWN, D_LEFT, D_RIGHT}
+ // SET {L, R} [0, 1]
+ // SET {MAIN, C} [0, 1] [0, 1]
++// FRAME_SYNC sequence {menu, gameplay, preamble, internal, unscoped}
++//    -> Identifies the transaction completed by the following FLUSH. Patched
++//       blocking-pipe launchers use one shared sequence for both player pipes.
+ // FLUSH -> In blocking input mode, this tells dolphin to progress to the next frame
+ //    (does nothing in non-blocking mode)
+ void PopulateDevices();
++void ValidateFrameSyncTransaction();
++
++enum class FrameSyncKind
++{
++  None,
++  Menu,
++  Gameplay,
++  Preamble,
++  Internal,
++  Unscoped,
++};
+ 
+ class PipeDevice : public Core::Device
+ {
+@@ -47,6 +61,12 @@ public:
+   void UpdateInput() override;
+   std::string GetName() const override { return m_name; }
+   std::string GetSource() const override { return "Pipe"; }
++  int GetSlippiPort() const { return m_slippi_port; }
++  bool SawFrameSyncFlush() const { return m_update_saw_flush; }
++  FrameSyncKind GetFrameSyncKind() const { return m_update_sync_kind; }
++  u64 GetFrameSyncSequence() const { return m_update_sync_sequence; }
++  u64 GetLastAcceptedFrameSyncSequence() const { return m_last_accepted_sync_sequence; }
++  void AcceptFrameSyncTransaction();
+ private:
+   class PipeInput : public Input
+   {
+@@ -67,6 +87,13 @@ private:
+ 
+   const PIPE_FD m_fd;
+   const std::string m_name;
++  int m_slippi_port = -1;
++  FrameSyncKind m_pending_sync_kind = FrameSyncKind::None;
++  u64 m_pending_sync_sequence = 0;
++  bool m_update_saw_flush = false;
++  FrameSyncKind m_update_sync_kind = FrameSyncKind::None;
++  u64 m_update_sync_sequence = 0;
++  u64 m_last_accepted_sync_sequence = 0;
+   std::string m_buf;
+   std::map<std::string, PipeInput*> m_buttons;
+   std::map<std::string, PipeInput*> m_axes;

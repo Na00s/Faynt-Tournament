@@ -1,0 +1,12 @@
+{
+  "schema_version": "melee_policy.bundled_model_source.v1",
+  "source_repository": "https://github.com/bicro/research_playground",
+  "source_revision": "268031e7bddebb4e8c7a40026cd0b95f824d9d0d",
+  "runtime_source_revision": "2c535c04693dc9a232fc81f244cbd24cb2359771",
+  "original_subdirectory": "melee-policy-frisson-ai",
+  "files": {
+    "model.py": "2e61e7b27b1412c4becbd2dd93ee8d8bebad15c14cb7a2babaf954993205854d",
+    "controller_codec.py": "4a51a6eb2bd1da48a1a7c852194d914ab6e5072b7d353096f351e89b24252286",
+    "tensor_batch.py": "07c39e9e5d5152b9d8d73aa74edf77c690db53f45b6ec03c6d4e64c80f4814ed"
+  }
+}

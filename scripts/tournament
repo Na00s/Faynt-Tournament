@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+
+project_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+export PYTHONPATH="$project_dir/src${PYTHONPATH:+:$PYTHONPATH}"
+cd "$project_dir"
+
+python_path="$project_dir/.e010-env/bin/python"
+if [ ! -x "$python_path" ]; then
+  echo "required isolated environment is missing: $python_path" >&2
+  exit 1
+fi
+
+exec "$python_path" -m melee_policy.integration.tournament "$@"

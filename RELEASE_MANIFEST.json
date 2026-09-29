@@ -1,0 +1,312 @@
+{
+  "name": "Faynt-Tournament",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "cffe9e63b5bc847b4b78828a531489415c618adca12b8b858e2cd057dcc37a93",
+      "bytes": 255
+    },
+    {
+      "path": "README.md",
+      "sha256": "99ad9b3e5b906e277b634d69e2766ab41eb531ce22cbf87d09e53203f19a036b",
+      "bytes": 6036
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "54fcc92f91fcc24ddf7381f12b080eb16158cd487a2c59961ca6f26b6f18b92a",
+      "bytes": 2535
+    },
+    {
+      "path": "configs/e010_slippi.toml",
+      "sha256": "48f70246b99db3bf01eb07bd3e22bf31f1151519427aaeb3d8342b0e6e200ede",
+      "bytes": 2012
+    },
+    {
+      "path": "configs/integration.toml",
+      "sha256": "621df1c58c365c4c0d9fae0d6bff8cc383ae1c5ddbba7ba43a51918cfc4726d4",
+      "bytes": 7324
+    },
+    {
+      "path": "licenses/MIMIC-MIT.txt",
+      "sha256": "dddb0f1396b4b5b5c1fd8badae8d6ccb6f930207cc2916d2a09145886ceae8e1",
+      "bytes": 1071
+    },
+    {
+      "path": "licenses/Slippi-Dolphin-GPL-2.0.txt",
+      "sha256": "ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6",
+      "bytes": 17987
+    },
+    {
+      "path": "licenses/slippi-ai-MIT.txt",
+      "sha256": "a632127717250e9d7d32a7451f8fecb668da1003e333850a4808bcce38348112",
+      "bytes": 1068
+    },
+    {
+      "path": "patches/slippi-dolphin-two-pipe-frame-sync.patch",
+      "sha256": "bb0e8885b33e6f3bb5a43e5ef936fce4a0b79459cde926a97d02aed9a7fd388e",
+      "bytes": 11412
+    },
+    {
+      "path": "requirements-e001.lock",
+      "sha256": "7ae73a9de29932d532322f0ef7b346f907b3ae5e00151a07921fc3735ae1b6f3",
+      "bytes": 668
+    },
+    {
+      "path": "requirements-e010.lock",
+      "sha256": "3b0551c542cb63346b11080e20042abd22da127054ba391b02a6924597905bbd",
+      "bytes": 1937
+    },
+    {
+      "path": "scripts/audit_export.py",
+      "sha256": "213e9af235ddbda13792c31f3db721795c1da542071cd7ddf9ef2f96816212d1",
+      "bytes": 19229
+    },
+    {
+      "path": "scripts/play",
+      "sha256": "e53aa2ce356e0165de1b172ed28c976edb71a01ae814138015aebdaaee83599d",
+      "bytes": 1035
+    },
+    {
+      "path": "scripts/tournament",
+      "sha256": "a6b402a80e2330f71193738b61513ce112dbbccc5000e799b908af3d09676694",
+      "bytes": 388
+    },
+    {
+      "path": "source-manifest.json",
+      "sha256": "228bb9973b093c94d5ede7cf0bb98e3d53685e9430c89000c133eb754a28e06f",
+      "bytes": 10690
+    },
+    {
+      "path": "sources/faynt/268031e7bddebb4e8c7a40026cd0b95f824d9d0d/controller_codec.py",
+      "sha256": "4a51a6eb2bd1da48a1a7c852194d914ab6e5072b7d353096f351e89b24252286",
+      "bytes": 33632
+    },
+    {
+      "path": "sources/faynt/268031e7bddebb4e8c7a40026cd0b95f824d9d0d/model.py",
+      "sha256": "2e61e7b27b1412c4becbd2dd93ee8d8bebad15c14cb7a2babaf954993205854d",
+      "bytes": 84243
+    },
+    {
+      "path": "sources/faynt/268031e7bddebb4e8c7a40026cd0b95f824d9d0d/source-manifest.json",
+      "sha256": "4e2f3f8f0cd4cabd00470ead4989a2cca0a22a11e797115ecbc30abe27a21a07",
+      "bytes": 613
+    },
+    {
+      "path": "sources/faynt/268031e7bddebb4e8c7a40026cd0b95f824d9d0d/tensor_batch.py",
+      "sha256": "07c39e9e5d5152b9d8d73aa74edf77c690db53f45b6ec03c6d4e64c80f4814ed",
+      "bytes": 6995
+    },
+    {
+      "path": "src/melee_policy/__init__.py",
+      "sha256": "d604df0d2d346930e17854db7f5d1d0516aa153fe198d388ea9c6107af716098",
+      "bytes": 42
+    },
+    {
+      "path": "src/melee_policy/e000/__init__.py",
+      "sha256": "6bf9eaa7237afc0de4f4dc8048b35efb46dc859ae269e4d6b5648a8516e9f9ec",
+      "bytes": 284
+    },
+    {
+      "path": "src/melee_policy/e000/enums.py",
+      "sha256": "2b9cf66076a5022213180cf27f8ee11f28507b0be5372fcb110e35afc07ea59f",
+      "bytes": 2283
+    },
+    {
+      "path": "src/melee_policy/integration/__init__.py",
+      "sha256": "d604df0d2d346930e17854db7f5d1d0516aa153fe198d388ea9c6107af716098",
+      "bytes": 42
+    },
+    {
+      "path": "src/melee_policy/integration/faynt_d0_checkpoints.py",
+      "sha256": "e69fa7b46c878612e123e9b466577f653b7c276f554755ac7e5c23c39f9d7812",
+      "bytes": 4766
+    },
+    {
+      "path": "src/melee_policy/integration/frame_watchdog.py",
+      "sha256": "8bf24e6c4ded876ad743227bccbb91ac67c87fd4af15fe3eb87e2f54eae34b7b",
+      "bytes": 2842
+    },
+    {
+      "path": "src/melee_policy/integration/frisson_cpu_match.py",
+      "sha256": "b88515e0220bfd329a14221051bbf68146f6841983777c03620f9c4951fcb897",
+      "bytes": 76654
+    },
+    {
+      "path": "src/melee_policy/integration/frisson_match.py",
+      "sha256": "4354dddb6bb50f285aaffb517024172a136ac4971e1896f43d93439eb87b2fc5",
+      "bytes": 78637
+    },
+    {
+      "path": "src/melee_policy/integration/frisson_policy.py",
+      "sha256": "2356b601c457a238393fd4b369dcf04aa7b71889c01ec05ff4f31e1998dbcc1e",
+      "bytes": 121270
+    },
+    {
+      "path": "src/melee_policy/integration/frisson_slippi_match.py",
+      "sha256": "2fb00d66886e22f6869f35fa2598298afd638106a98bbbd33ea2c639a762b7b0",
+      "bytes": 68694
+    },
+    {
+      "path": "src/melee_policy/integration/game_bundle.py",
+      "sha256": "77a08f753e9810b5dc54f372328553386e15274cb28b7f54d067e427a260448b",
+      "bytes": 16180
+    },
+    {
+      "path": "src/melee_policy/integration/match_runtime.py",
+      "sha256": "ee1e2e121877003f37b91a0c737befdcb2cc48129acf621c0705a00c05c10874",
+      "bytes": 143850
+    },
+    {
+      "path": "src/melee_policy/integration/mimic_bundle_manifest.py",
+      "sha256": "53313d0fa9ed6dccd786a349cfb6509440fa4beca8d3345c80c0e5496fc97720",
+      "bytes": 9427
+    },
+    {
+      "path": "src/melee_policy/integration/mimic_native_bundles.v1.json",
+      "sha256": "adb8fa9ef8c6fd5f054fb68b22552c2c92cacce3f8cc0ac0ca2f72bed9ebcef3",
+      "bytes": 31259
+    },
+    {
+      "path": "src/melee_policy/integration/native/macos_mux_replay_audio.m",
+      "sha256": "23c8dd6b030f33c5ffe3a8de219bd8987b683fff3b0dab1c9ea41c05ad32e005",
+      "bytes": 65453
+    },
+    {
+      "path": "src/melee_policy/integration/native/macos_replay_recorder.m",
+      "sha256": "d01a078277f78c2305b7080a07d8ea8321587ed92d469c24da71c9f9497dd490",
+      "bytes": 202899
+    },
+    {
+      "path": "src/melee_policy/integration/natural_game_end.py",
+      "sha256": "043a5913f0bf421a708ff0a683c52703a42ebaa6da8f611516021846c211f0ad",
+      "bytes": 728
+    },
+    {
+      "path": "src/melee_policy/integration/play.py",
+      "sha256": "72065644cb75bebe9d8801b67289dae618e32baca4c0473c007bd8e95d375380",
+      "bytes": 15541
+    },
+    {
+      "path": "src/melee_policy/integration/post_rl_checkpoints.py",
+      "sha256": "2317c01de544180ac0520105403a62b806eb717a22885e5634180aad54253c9f",
+      "bytes": 2259
+    },
+    {
+      "path": "src/melee_policy/integration/replay_result.py",
+      "sha256": "059d5870e2399516575533afd81b529a06a7d2ea7399e9efb7d5e12a60493252",
+      "bytes": 41519
+    },
+    {
+      "path": "src/melee_policy/integration/replay_video.py",
+      "sha256": "826732a3a9af6144d2e9d433930a5e7041d4553ff49bfe3425217349b22fe7f1",
+      "bytes": 237522
+    },
+    {
+      "path": "src/melee_policy/integration/runtime_equivalence.py",
+      "sha256": "fb347a7468bcf2d047d520bcda81723da62a233e384588034038c909a7628ac1",
+      "bytes": 5651
+    },
+    {
+      "path": "src/melee_policy/integration/runtime_identity.py",
+      "sha256": "388bd46e041df6a5ec80ec3d96eedcb22abb2e9e0b56fa1281cff4ec818e17a9",
+      "bytes": 5508
+    },
+    {
+      "path": "src/melee_policy/integration/slippi_ai_policy.py",
+      "sha256": "211e9d16b4c969629170a94d029660848c1ce9157f5a2280ae8b9c3765b5e59a",
+      "bytes": 64440
+    },
+    {
+      "path": "src/melee_policy/integration/slippi_compatibility.py",
+      "sha256": "db287b9b16eae628b4190dda8d7b4ae71a88ee0a47f55ada24636829c1e6391a",
+      "bytes": 45116
+    },
+    {
+      "path": "src/melee_policy/integration/slippi_cpu_match.py",
+      "sha256": "bb9c69e005fa11dac4c7738a96d2f301fc04ef7d9a57d42ae4cc230d0ce1453e",
+      "bytes": 60952
+    },
+    {
+      "path": "src/melee_policy/integration/slippi_match.py",
+      "sha256": "409de044f0f18f6d99c7a66440e1f6d81a61d29f5092b5a714619e11296440bb",
+      "bytes": 200170
+    },
+    {
+      "path": "src/melee_policy/integration/state_identity.py",
+      "sha256": "9bb290953064ce574ef59ca1b4fa351e30c5c191854fb891bd290f3cbf60d96c",
+      "bytes": 1743
+    },
+    {
+      "path": "src/melee_policy/integration/tournament.py",
+      "sha256": "c11d9a70f9f1ffe261a8c5cd916ada8a19222865de817caaf54b0dd7370e67d4",
+      "bytes": 116616
+    },
+    {
+      "path": "tests/integration/test_faynt_d0_checkpoints.py",
+      "sha256": "1af3ce166f1cb92105030006c4a581c751b339788d6b4302f3d80ec417031f0f",
+      "bytes": 11758
+    },
+    {
+      "path": "tests/integration/test_frame_watchdog.py",
+      "sha256": "d920212838d17610f9ba3035a7d81b92965252deede8d85b0de545129a198821",
+      "bytes": 3697
+    },
+    {
+      "path": "tests/integration/test_frisson_cpu_match.py",
+      "sha256": "d7d178c6f4487b303f17400168f7cb1ed83facb05735cde43ac936e99e48725d",
+      "bytes": 31626
+    },
+    {
+      "path": "tests/integration/test_frisson_match.py",
+      "sha256": "670731362fc5fb32ee38fcada17689beaef9a316f0c85f30d4da40b1e87d1b23",
+      "bytes": 39742
+    },
+    {
+      "path": "tests/integration/test_frisson_policy.py",
+      "sha256": "38f243733bc21ed279a9d6616305208d452a33317aa875fcceca49948932e269",
+      "bytes": 39266
+    },
+    {
+      "path": "tests/integration/test_frisson_slippi_match.py",
+      "sha256": "b1f91d70c8d85363f884178a1ab35b2e2cde2e399faa10bddc01afe34c159701",
+      "bytes": 24611
+    },
+    {
+      "path": "tests/integration/test_natural_game_end.py",
+      "sha256": "cdb962c1bfc8485706436b2914f94729d7d0bc870fdfbf175cdba4c4b9b879f5",
+      "bytes": 1755
+    },
+    {
+      "path": "tests/integration/test_replay_result.py",
+      "sha256": "cf52592f4617ebb6b6e9079790671e5212b51b58b935665c077e2d1bd5d3d184",
+      "bytes": 14546
+    },
+    {
+      "path": "tests/integration/test_slippi_ai_policy.py",
+      "sha256": "ced6c29af142e063d31270ae2f168a5c54570cd40b7cb2eba45dd1cea662cf06",
+      "bytes": 36531
+    },
+    {
+      "path": "tests/integration/test_slippi_compatibility.py",
+      "sha256": "070e6fa38334911748745c4b374c8310b6fc2f7833465dd731d656439f92a530",
+      "bytes": 13105
+    },
+    {
+      "path": "tests/integration/test_slippi_match.py",
+      "sha256": "051f19e043f42f9970ba1b3dae228f13e59c01a7cc5db2041666210af5b7b5c5",
+      "bytes": 71941
+    },
+    {
+      "path": "tests/integration/test_source_bundle.py",
+      "sha256": "f3e41fd4eb267114b1de03d6d9b302736ecaeeea10517156f81d20477de12074",
+      "bytes": 2189
+    },
+    {
+      "path": "tests/integration/test_tournament.py",
+      "sha256": "baa08b46990c29d02ab96de0dc158a956a9164bb3a93fedadbe52a7ccbe640f9",
+      "bytes": 5930
+    }
+  ],
+  "includes_internal_git_history": false,
+  "gameplay_rerun_for_release": false
+}

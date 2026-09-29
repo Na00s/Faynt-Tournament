@@ -1,0 +1,204 @@
+{
+  "source_repository": "https://github.com/bicro/research_playground",
+  "source_head": "1e314880011a0be7af99e41542c1bd2582387b3b",
+  "snapshot": "current local files, including uncommitted runtime improvements",
+  "files": [
+    {
+      "source": "patches/slippi-dolphin-two-pipe-frame-sync.patch",
+      "target": "patches/slippi-dolphin-two-pipe-frame-sync.patch",
+      "source_sha256": "bb0e8885b33e6f3bb5a43e5ef936fce4a0b79459cde926a97d02aed9a7fd388e",
+      "release_sha256": "bb0e8885b33e6f3bb5a43e5ef936fce4a0b79459cde926a97d02aed9a7fd388e"
+    },
+    {
+      "source": "requirements-e001.lock",
+      "target": "requirements-e001.lock",
+      "source_sha256": "7ae73a9de29932d532322f0ef7b346f907b3ae5e00151a07921fc3735ae1b6f3",
+      "release_sha256": "7ae73a9de29932d532322f0ef7b346f907b3ae5e00151a07921fc3735ae1b6f3"
+    },
+    {
+      "source": "requirements-e010.lock",
+      "target": "requirements-e010.lock",
+      "source_sha256": "3b0551c542cb63346b11080e20042abd22da127054ba391b02a6924597905bbd",
+      "release_sha256": "3b0551c542cb63346b11080e20042abd22da127054ba391b02a6924597905bbd"
+    },
+    {
+      "source": "scripts/play",
+      "target": "scripts/play",
+      "source_sha256": "8aff28548df15ea772a6c39339f1c8a3747889f0eb9fc20e8a4095ce1f4ce719",
+      "release_sha256": "e53aa2ce356e0165de1b172ed28c976edb71a01ae814138015aebdaaee83599d"
+    },
+    {
+      "source": "scripts/tournament",
+      "target": "scripts/tournament",
+      "source_sha256": "a6b402a80e2330f71193738b61513ce112dbbccc5000e799b908af3d09676694",
+      "release_sha256": "a6b402a80e2330f71193738b61513ce112dbbccc5000e799b908af3d09676694"
+    },
+    {
+      "source": "src/melee_policy/e000/__init__.py",
+      "target": "src/melee_policy/e000/__init__.py",
+      "source_sha256": "6bf9eaa7237afc0de4f4dc8048b35efb46dc859ae269e4d6b5648a8516e9f9ec",
+      "release_sha256": "6bf9eaa7237afc0de4f4dc8048b35efb46dc859ae269e4d6b5648a8516e9f9ec"
+    },
+    {
+      "source": "src/melee_policy/e000/enums.py",
+      "target": "src/melee_policy/e000/enums.py",
+      "source_sha256": "2b9cf66076a5022213180cf27f8ee11f28507b0be5372fcb110e35afc07ea59f",
+      "release_sha256": "2b9cf66076a5022213180cf27f8ee11f28507b0be5372fcb110e35afc07ea59f"
+    },
+    {
+      "source": "src/melee_policy/integration/faynt_d0_checkpoints.py",
+      "target": "src/melee_policy/integration/faynt_d0_checkpoints.py",
+      "source_sha256": "e69fa7b46c878612e123e9b466577f653b7c276f554755ac7e5c23c39f9d7812",
+      "release_sha256": "e69fa7b46c878612e123e9b466577f653b7c276f554755ac7e5c23c39f9d7812"
+    },
+    {
+      "source": "src/melee_policy/integration/frame_watchdog.py",
+      "target": "src/melee_policy/integration/frame_watchdog.py",
+      "source_sha256": "8bf24e6c4ded876ad743227bccbb91ac67c87fd4af15fe3eb87e2f54eae34b7b",
+      "release_sha256": "8bf24e6c4ded876ad743227bccbb91ac67c87fd4af15fe3eb87e2f54eae34b7b"
+    },
+    {
+      "source": "src/melee_policy/integration/frisson_cpu_match.py",
+      "target": "src/melee_policy/integration/frisson_cpu_match.py",
+      "source_sha256": "bda3dda83c8b529790a148d1f7e75a00280be8a2a77582005f6062fd2bb48c30",
+      "release_sha256": "b88515e0220bfd329a14221051bbf68146f6841983777c03620f9c4951fcb897"
+    },
+    {
+      "source": "src/melee_policy/integration/frisson_match.py",
+      "target": "src/melee_policy/integration/frisson_match.py",
+      "source_sha256": "d536c7f87c2c6ee5bceeb6973d910a27758c2c89b663f82439842fa76248fa76",
+      "release_sha256": "4354dddb6bb50f285aaffb517024172a136ac4971e1896f43d93439eb87b2fc5"
+    },
+    {
+      "source": "src/melee_policy/integration/frisson_policy.py",
+      "target": "src/melee_policy/integration/frisson_policy.py",
+      "source_sha256": "284dd673e115c9c1553eccb1ecd2788fc5dddafbc9223cb2b8d939948c228bb8",
+      "release_sha256": "2356b601c457a238393fd4b369dcf04aa7b71889c01ec05ff4f31e1998dbcc1e"
+    },
+    {
+      "source": "src/melee_policy/integration/frisson_slippi_match.py",
+      "target": "src/melee_policy/integration/frisson_slippi_match.py",
+      "source_sha256": "4c73dd81152307bb7a44302c09f6c29f46719230ea8656a111e2dc45c7a07399",
+      "release_sha256": "2fb00d66886e22f6869f35fa2598298afd638106a98bbbd33ea2c639a762b7b0"
+    },
+    {
+      "source": "src/melee_policy/integration/game_bundle.py",
+      "target": "src/melee_policy/integration/game_bundle.py",
+      "source_sha256": "77a08f753e9810b5dc54f372328553386e15274cb28b7f54d067e427a260448b",
+      "release_sha256": "77a08f753e9810b5dc54f372328553386e15274cb28b7f54d067e427a260448b"
+    },
+    {
+      "source": "src/melee_policy/integration/mimic_vs_hal.py",
+      "target": "src/melee_policy/integration/match_runtime.py",
+      "source_sha256": "24ed6cb674de7242009c7e07fb0b9e7657c348168fa5723551a3aa40fcd1cb42",
+      "release_sha256": "ee1e2e121877003f37b91a0c737befdcb2cc48129acf621c0705a00c05c10874"
+    },
+    {
+      "source": "src/melee_policy/integration/mimic_bundle_manifest.py",
+      "target": "src/melee_policy/integration/mimic_bundle_manifest.py",
+      "source_sha256": "53313d0fa9ed6dccd786a349cfb6509440fa4beca8d3345c80c0e5496fc97720",
+      "release_sha256": "53313d0fa9ed6dccd786a349cfb6509440fa4beca8d3345c80c0e5496fc97720"
+    },
+    {
+      "source": "src/melee_policy/integration/native/macos_mux_replay_audio.m",
+      "target": "src/melee_policy/integration/native/macos_mux_replay_audio.m",
+      "source_sha256": "23c8dd6b030f33c5ffe3a8de219bd8987b683fff3b0dab1c9ea41c05ad32e005",
+      "release_sha256": "23c8dd6b030f33c5ffe3a8de219bd8987b683fff3b0dab1c9ea41c05ad32e005"
+    },
+    {
+      "source": "src/melee_policy/integration/native/macos_replay_recorder.m",
+      "target": "src/melee_policy/integration/native/macos_replay_recorder.m",
+      "source_sha256": "d01a078277f78c2305b7080a07d8ea8321587ed92d469c24da71c9f9497dd490",
+      "release_sha256": "d01a078277f78c2305b7080a07d8ea8321587ed92d469c24da71c9f9497dd490"
+    },
+    {
+      "source": "src/melee_policy/integration/natural_game_end.py",
+      "target": "src/melee_policy/integration/natural_game_end.py",
+      "source_sha256": "043a5913f0bf421a708ff0a683c52703a42ebaa6da8f611516021846c211f0ad",
+      "release_sha256": "043a5913f0bf421a708ff0a683c52703a42ebaa6da8f611516021846c211f0ad"
+    },
+    {
+      "source": "src/melee_policy/integration/play.py",
+      "target": "src/melee_policy/integration/play.py",
+      "source_sha256": "6904fcb8dbb6bac1ce378ad3edaedf3c35d11b2b0d5f4f1b041e187edf7a08d2",
+      "release_sha256": "72065644cb75bebe9d8801b67289dae618e32baca4c0473c007bd8e95d375380"
+    },
+    {
+      "source": "src/melee_policy/integration/post_rl_checkpoints.py",
+      "target": "src/melee_policy/integration/post_rl_checkpoints.py",
+      "source_sha256": "2317c01de544180ac0520105403a62b806eb717a22885e5634180aad54253c9f",
+      "release_sha256": "2317c01de544180ac0520105403a62b806eb717a22885e5634180aad54253c9f"
+    },
+    {
+      "source": "src/melee_policy/integration/replay_result.py",
+      "target": "src/melee_policy/integration/replay_result.py",
+      "source_sha256": "059d5870e2399516575533afd81b529a06a7d2ea7399e9efb7d5e12a60493252",
+      "release_sha256": "059d5870e2399516575533afd81b529a06a7d2ea7399e9efb7d5e12a60493252"
+    },
+    {
+      "source": "src/melee_policy/integration/replay_video.py",
+      "target": "src/melee_policy/integration/replay_video.py",
+      "source_sha256": "e08dd661bc3f5bd1aeffac917d0037272c572b1a7774e0ca21f202969aba4279",
+      "release_sha256": "826732a3a9af6144d2e9d433930a5e7041d4553ff49bfe3425217349b22fe7f1"
+    },
+    {
+      "source": "src/melee_policy/integration/runtime_equivalence.py",
+      "target": "src/melee_policy/integration/runtime_equivalence.py",
+      "source_sha256": "b66a678baf8b880d22e38f90597b089ef357cca6a8ba07ca320e6731adebcfcf",
+      "release_sha256": "fb347a7468bcf2d047d520bcda81723da62a233e384588034038c909a7628ac1"
+    },
+    {
+      "source": "src/melee_policy/integration/runtime_identity.py",
+      "target": "src/melee_policy/integration/runtime_identity.py",
+      "source_sha256": "388bd46e041df6a5ec80ec3d96eedcb22abb2e9e0b56fa1281cff4ec818e17a9",
+      "release_sha256": "388bd46e041df6a5ec80ec3d96eedcb22abb2e9e0b56fa1281cff4ec818e17a9"
+    },
+    {
+      "source": "src/melee_policy/integration/slippi_ai_policy.py",
+      "target": "src/melee_policy/integration/slippi_ai_policy.py",
+      "source_sha256": "211e9d16b4c969629170a94d029660848c1ce9157f5a2280ae8b9c3765b5e59a",
+      "release_sha256": "211e9d16b4c969629170a94d029660848c1ce9157f5a2280ae8b9c3765b5e59a"
+    },
+    {
+      "source": "src/melee_policy/integration/slippi_compatibility.py",
+      "target": "src/melee_policy/integration/slippi_compatibility.py",
+      "source_sha256": "db287b9b16eae628b4190dda8d7b4ae71a88ee0a47f55ada24636829c1e6391a",
+      "release_sha256": "db287b9b16eae628b4190dda8d7b4ae71a88ee0a47f55ada24636829c1e6391a"
+    },
+    {
+      "source": "src/melee_policy/integration/slippi_cpu_match.py",
+      "target": "src/melee_policy/integration/slippi_cpu_match.py",
+      "source_sha256": "5e65081754b5ad35c831b1880b6d23a27838103d927660356b31ed20149dcd80",
+      "release_sha256": "bb9c69e005fa11dac4c7738a96d2f301fc04ef7d9a57d42ae4cc230d0ce1453e"
+    },
+    {
+      "source": "src/melee_policy/integration/slippi_match.py",
+      "target": "src/melee_policy/integration/slippi_match.py",
+      "source_sha256": "e41af721dd6e53a7e4592c3a7e2a273ad68159494344af21c64e4fde20be4b69",
+      "release_sha256": "409de044f0f18f6d99c7a66440e1f6d81a61d29f5092b5a714619e11296440bb"
+    },
+    {
+      "source": "src/melee_policy/integration/state_identity.py",
+      "target": "src/melee_policy/integration/state_identity.py",
+      "source_sha256": "9bb290953064ce574ef59ca1b4fa351e30c5c191854fb891bd290f3cbf60d96c",
+      "release_sha256": "9bb290953064ce574ef59ca1b4fa351e30c5c191854fb891bd290f3cbf60d96c"
+    },
+    {
+      "source": "src/melee_policy/integration/tournament.py",
+      "target": "src/melee_policy/integration/tournament.py",
+      "source_sha256": "84cf6af0bf65f965978dd42fd12218c3382cf96bb3955e0fc59d4bc2e8e2fbb0",
+      "release_sha256": "c11d9a70f9f1ffe261a8c5cd916ada8a19222865de817caaf54b0dd7370e67d4"
+    }
+  ],
+  "excluded": [
+    "HAL implementation and adapter",
+    "upstream source trees",
+    "checkpoints and normalization assets",
+    "replays and game images",
+    "emulator binaries",
+    "dependency installers and downloads",
+    "historical research artifacts"
+  ],
+  "owned_model_bundle": "sources/faynt/268031e7bddebb4e8c7a40026cd0b95f824d9d0d/source-manifest.json",
+  "source_layout": "src/melee_policy plus the pinned owned model bundle; local upstream dependencies are separately supplied"
+}

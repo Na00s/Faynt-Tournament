@@ -1,0 +1,212 @@
+# Local input template. Supply the pinned source checkouts, weights, emulator,
+# game image, and replay canary at these paths. This runtime performs no downloads.
+# Relative paths resolve against this release directory.
+
+[integration]
+schema_version = "integration.match_runtime.v1"
+name = "local-evaluation"
+seed = 42
+device = "cpu"
+max_game_frames = 30000
+inference_mode = "synchronous-concurrent"
+maximum_pending_snapshots_per_model = 1
+menu_timeout_seconds = 120.0
+replay_finalize_timeout_seconds = 30.0
+
+[game_image]
+default_path = ".e001-cache/game-images/melee-ntsc-1.02.iso"
+environment_variable = "MELEE_ISO_PATH"
+disc_game_id = "GALE01"
+disc_revision = 2
+byte_length = 1459978240
+sha256 = "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464"
+
+[emulator]
+directory = ".e001-cache/integration-emulator-frame-sync-v3/netplay"
+application = "Slippi Dolphin.app"
+release = "3.6.4"
+release_url = "https://github.com/project-slippi/Ishiiruka/releases/download/v3.6.4/FM-Slippi-3.6.4-Mac.dmg"
+release_dmg_sha256 = "f9732bc93370f74dc4dd52194a5182018b4272b1dfbb4cb001a972b9b89ae82f"
+source_revision = "e7711b104b339a99385f2bb12b472d46140a7bc7"
+frame_sync_protocol = "FRAME_SYNC sequence kind"
+frame_sync_patch = "patches/slippi-dolphin-two-pipe-frame-sync.patch"
+frame_sync_patch_sha256 = "bb0e8885b33e6f3bb5a43e5ef936fce4a0b79459cde926a97d02aed9a7fd388e"
+application_file_count = 717
+application_byte_length = 40565896
+application_tree_sha256 = "b2213750930fe5752a6ce42263f9e94f2d8b144cf42bcf82fcdf84612581ecb7"
+executable_sha256 = "33ad9ec4d439e5b0493bd8488d92d91f4d3b5787b4d36a97332e1a551134c7a8"
+slippi_port = 51442
+
+[video]
+playback_application = ".e003-cache/slippi-launcher/user-data/playback/Slippi Dolphin.app"
+startup_timeout_seconds = 30.0
+resume_delay_seconds = 0.25
+audio_presentation_delay_seconds = 0.050
+tail_padding_seconds = 2.0
+frame_rate = 60.0
+width = 1280
+height = 720
+expected_capture_width = 1256
+expected_capture_height = 844
+
+[mimic]
+source_directory = ".e001-cache/mimic-source"
+source_revision = "70c925b7675202d853472c4e54332790ad76efe7"
+asset_directory = ".e001-cache/mimic/fox-master"
+checkpoint = ".e001-cache/mimic/fox-master/model.pt"
+checkpoint_sha256 = "d2a317763bf21038ef70f369d4047506800fdeeea45a57a1b5fec866065c2f0c"
+character = "FOX"
+decode_strategy = "categorical-sampling"
+temperature = 1.0
+top_k = 0
+top_p = 0.0
+
+[slippi_ai]
+repository_url = "https://github.com/vladfi1/slippi-ai"
+source_directory = ".e001-cache/slippi-ai-source"
+source_revision = "577965a7731dc53e3472ea63d9e9853a4e9d65fa"
+license = "MIT"
+checkpoint = ".e001-cache/slippi-ai/models/medium-v2"
+checkpoint_url = "https://www.dropbox.com/scl/fi/lpi9krfei1knfvfw7up7v/medium-v2?rlkey=qmah3qfz5anwva93x48zcx01k&st=sxo8hbeb&dl=1"
+checkpoint_sha256 = "48dcfd87c52fde9899fb37b0293ce2a597fb2384b7b40baf7fb49c760152a96c"
+checkpoint_byte_length = 95559707
+checkpoint_platform = "tf"
+checkpoint_delay = 21
+console_delay = 0
+effective_output_delay = 21
+upstream_eval_two_console_delay = 2
+default_name = "Master Player"
+sample_temperature = 1.0
+compile = true
+async_inference = true
+allowed_characters = [
+  "FOX",
+  "FALCO",
+  "MARTH",
+  "SHEIK",
+  "JIGGLYPUFF",
+  "CPTFALCON",
+  "PEACH",
+  "YOSHI",
+  "POPO",
+  "LUIGI",
+  "PIKACHU",
+  "SAMUS",
+]
+
+[slippi_integration]
+schema_version = "integration.slippi_ai.v6"
+output_directory = "artifacts/integration/slippi_ai"
+exact_mode_only = true
+
+[frisson_ai]
+source_repository = "."
+source_subdirectory = "sources/faynt/268031e7bddebb4e8c7a40026cd0b95f824d9d0d"
+source_directory = "sources/faynt/268031e7bddebb4e8c7a40026cd0b95f824d9d0d"
+source_revision = "268031e7bddebb4e8c7a40026cd0b95f824d9d0d"
+runtime_source_revision = "2c535c04693dc9a232fc81f244cbd24cb2359771"
+parser_source_directory = ".e001-cache/slippi-ai-source"
+slippi_ai_commit = "577965a7731dc53e3472ea63d9e9853a4e9d65fa"
+checkpoint = ".e010-cache/selfplay-20m-bc/best.pt"
+checkpoint_format = "melee_rl.rl_checkpoint.v1"
+checkpoint_sha256 = "a740a37130a0d099e1c8d7b50d3986f7f8ea9e2fc293e652f8686abd1d17cdfa"
+checkpoint_byte_length = 269699511
+checkpoint_config_yaml_sha256 = "fb6fd1f74d59627ec1e3c8bebac948880e54954eccae1bcbb37e15dcd3456269"
+sample_temperature = 1.0
+actor_seed = 0
+action_offset_frames = 1
+delay_frames = 0
+context_mode = "ring"
+context_length = 256
+actor_context_frames = 128
+actor_rollout_length = 128
+batch_steps = 1
+fast_step = true
+deterministic_algorithms = true
+controller_buttons_vocab = 728
+controller_main_stick_vocab = 85
+parameter_count = 20040877
+model_source_sha256 = "2e61e7b27b1412c4becbd2dd93ee8d8bebad15c14cb7a2babaf954993205854d"
+controller_codec_source_sha256 = "4a51a6eb2bd1da48a1a7c852194d914ab6e5072b7d353096f351e89b24252286"
+tensor_batch_source_sha256 = "07c39e9e5d5152b9d8d73aa74edf77c690db53f45b6ec03c6d4e64c80f4814ed"
+deployed_fast_step_source_sha256 = "aff24f14bcbdabaa9b8f6e1a152e421ef3344901b04c9b52c821129bee093e18"
+allowed_characters = [
+  "MARIO",
+  "FOX",
+  "CPTFALCON",
+  "DK",
+  "KIRBY",
+  "BOWSER",
+  "LINK",
+  "SHEIK",
+  "NESS",
+  "PEACH",
+  "POPO",
+  "PIKACHU",
+  "SAMUS",
+  "YOSHI",
+  "JIGGLYPUFF",
+  "MEWTWO",
+  "LUIGI",
+  "MARTH",
+  "ZELDA",
+  "YLINK",
+  "DOC",
+  "FALCO",
+  "PICHU",
+  "GAMEANDWATCH",
+  "GANONDORF",
+  "ROY",
+]
+output_directory = "artifacts/integration/frisson_ai"
+
+[[frisson_ai.explicit_checkpoint_identities]]
+name = "mixed-50-50-step123"
+sha256 = "45ae503fe422b4e7a0f281ed4c7b887d89d8a4692b539fa99f598f4db8b2e920"
+byte_length = 80210061
+
+[[frisson_ai.explicit_checkpoint_identities]]
+name = "ko-weighted-step127"
+sha256 = "c924418e721bdf3b64f0a54507450930678c7785fd264fdd223a797bb038045c"
+byte_length = 80210125
+
+[[frisson_ai.explicit_checkpoint_identities]]
+name = "mpr-5b2bfa51c64dd715f8e2-best-validation-frames-3499819008"
+sha256 = "d1771d01bcfc506b51ec89ff4937f4258b8db20a255c156b6f0135579e70eb6a"
+byte_length = 96451691
+
+[[frisson_ai.explicit_checkpoint_identities]]
+name = "mpr-00d5f6f00b122510125b-best-validation-frames-7999586304"
+sha256 = "5a54ea4ecfa150198180dff4d06ac4fe6ecec5d9433803cc13b527e41f41d14e"
+byte_length = 96451691
+
+[[frisson_ai.explicit_checkpoint_identities]]
+name = "mpr-7310252a57a246be08f1-best-validation-frames-3499819008"
+sha256 = "59542f7fd82d8e9c076e5cfbca8f8ac4724b2f30727048f5be8ee8b0a7ee4299"
+byte_length = 644290579
+
+[[frisson_ai.explicit_checkpoint_identities]]
+name = "mpr-7310252a57a246be08f1-best-validation-frames-5499715584"
+sha256 = "08329fe349224be2dc92ff1332cc022000251622f4fffe2e76ff401ba3a8a99c"
+byte_length = 644291987
+
+[[frisson_ai.explicit_checkpoint_identities]]
+name = "final-75m-muon-low-step86016-frames-5637144576"
+sha256 = "8662de0c4c0deaae2879548d6373def792dbb52adec44f2b474adb7fe155c648"
+byte_length = 644291987
+
+[[frisson_ai.explicit_checkpoint_identities]]
+name = "posttrained-10m-cur-6-kd-step195248-frames-12795772928"
+sha256 = "63b5ff05ef30476c4f41590c478f4a7218f3b72a8b5ef24a0e336eeb2b7c287b"
+byte_length = 96452075
+
+[[frisson_ai.explicit_checkpoint_identities]]
+name = "posttrained-75m-cur-3-step127214-frames-8337096704"
+sha256 = "8211f1832198646e9f4e3bacde26f181614f93320e68bd326dd5942c4e0f4077"
+byte_length = 644291987
+
+[outputs]
+directory = "artifacts/integration/matches"
+summary = "artifacts/integration/matches/summary.json"
+trace = "artifacts/integration/matches/controller_trace.jsonl"
+replay_directory = "artifacts/integration/matches/replays"

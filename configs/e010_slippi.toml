@@ -1,0 +1,67 @@
+[experiment]
+id = "E010-SLIPPI"
+kind = "public-checkpoint-compatibility-canary"
+seed = 42
+device = "cpu"
+precision = "float32"
+
+[source]
+repository_url = "https://github.com/vladfi1/slippi-ai"
+branch = "main"
+revision = "577965a7731dc53e3472ea63d9e9853a4e9d65fa"
+directory = ".e001-cache/slippi-ai-source"
+
+[checkpoint]
+name = "medium-v2"
+url = "https://www.dropbox.com/scl/fi/lpi9krfei1knfvfw7up7v/medium-v2?rlkey=qmah3qfz5anwva93x48zcx01k&st=sxo8hbeb&dl=1"
+path = ".e001-cache/slippi-ai/models/medium-v2"
+sha256 = "48dcfd87c52fde9899fb37b0293ce2a597fb2384b7b40baf7fb49c760152a96c"
+byte_length = 95559707
+platform = "tf"
+name_code_label = "Master Player"
+sample_temperature = 1.0
+policy_delay = 21
+
+[native_runtime]
+python = "3.12.11"
+environment = ".e010-env"
+compile = true
+jit_compile = false
+async_inference = true
+disable_gpus = true
+console_delay = 2
+effective_output_delay = 19
+live_observation_filter = "sequential"
+warmup = "one upstream stochastic dummy step"
+reset_frame = -123
+
+[offline_canary]
+replay_sha256 = "039d70ae59bc37fc1fe5b72c1dadcd95d2b2877b9ad1964bf978aaa6662962ad"
+replay_path = ".e000-cache/raw/039d70ae59bc37fc1fe5b72c1dadcd95d2b2877b9ad1964bf978aaa6662962ad.slp"
+controlled_port = 1
+controlled_character = "FOX"
+opponent_port = 2
+opponent_character = "YOSHI"
+frames = 64
+
+[live_smoke]
+runner_config = "configs/integration.toml"
+player_1_model = "slippi-ai"
+player_1_character = "FOX"
+player_2_model = "mimic"
+player_2_character = "FOX"
+stage = "BATTLEFIELD"
+maximum_game_frames = 600
+artifact_label = "e010_slippi_vs_mimic_smoke"
+
+[gate]
+require_exact_source_and_checkpoint_identity = true
+require_exact_parameter_tree_assignment = true
+require_native_parser_filter_recurrence_sampling_decoder = true
+require_first_frame_reset = true
+require_no_dropped_policy_frames = true
+require_delay_alignment = true
+require_native_decoder_command_parity = true
+require_finite_in_vocabulary_commands = true
+require_fixed_seed_process_reload_match = true
+require_parseable_rendered_replay = true

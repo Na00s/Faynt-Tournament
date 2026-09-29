@@ -1,0 +1,25 @@
+#!/bin/sh
+set -eu
+
+project_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+export PYTHONPATH="$project_dir/src${PYTHONPATH:+:$PYTHONPATH}"
+cd "$project_dir"
+
+python_path="$project_dir/.e001-env/bin/python"
+for argument in "$@"; do
+  case "$argument" in
+    faynt|--p1=faynt|--p2=faynt|--player-1=faynt|--player-2=faynt|slippi|slippi-ai|frisson|frisson-ai|frisson_ai|--p1=slippi|--p1=slippi-ai|--p2=slippi|--p2=slippi-ai|--p1=frisson|--p1=frisson-ai|--p1=frisson_ai|--p2=frisson|--p2=frisson-ai|--p2=frisson_ai)
+      python_path="$project_dir/.e010-env/bin/python"
+      ;;
+    --player-1=slippi|--player-1=slippi-ai|--player-2=slippi|--player-2=slippi-ai|--player-1=frisson|--player-1=frisson-ai|--player-1=frisson_ai|--player-2=frisson|--player-2=frisson-ai|--player-2=frisson_ai)
+      python_path="$project_dir/.e010-env/bin/python"
+      ;;
+  esac
+done
+
+if [ ! -x "$python_path" ]; then
+  echo "required isolated environment is missing: $python_path" >&2
+  exit 1
+fi
+
+exec "$python_path" -m melee_policy.integration.play "$@"
