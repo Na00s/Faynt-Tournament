@@ -7,14 +7,19 @@
       "bytes": 255
     },
     {
+      "path": "LICENSE",
+      "sha256": "6a6444a7fdd7e848bd260863331db54f4e60f01bb33307766525c1a254891f39",
+      "bytes": 1069
+    },
+    {
       "path": "README.md",
-      "sha256": "99ad9b3e5b906e277b634d69e2766ab41eb531ce22cbf87d09e53203f19a036b",
-      "bytes": 6036
+      "sha256": "0c38d2df459e91819fd4191461fead0a0d1a5087a5bbe3bd90422322ddda817a",
+      "bytes": 6571
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "sha256": "54fcc92f91fcc24ddf7381f12b080eb16158cd487a2c59961ca6f26b6f18b92a",
-      "bytes": 2535
+      "sha256": "1a766954f42e6916e512e840d4b9367565b77c4bf2058bf559a42b564ef22dd1",
+      "bytes": 3503
     },
     {
       "path": "configs/e010_slippi.toml",

@@ -45,7 +45,7 @@ The equivalent 75M Base comparison uses `Faynt-75M-Base/checkpoint.pt`. Use a ne
 
 Checkpoint formats matter. The Base and Expert `.pt` files use the historical training envelopes. Expert winners also have fixed benchmark paths. The paper's Arena zero-delay schedules use the recorded Ali benchmark envelopes and their native-checkpoint attestations. Published Arena policy exports and Transformers `model.safetensors` packages have separate loading interfaces. Use the companion benchmark suite's Arena entry point and its declared envelope preparation when reproducing those schedules.
 
-The configured actor uses a 128-frame ring cache, FP32, temperature 1, next-frame action alignment, and zero added Faynt delay. The model's trained sequence length is 256. These settings form part of the checkpoint and benchmark contracts.
+The local match runtime uses a continuous 256-frame ring cache, FP32, temperature 1, next-frame action alignment, and zero added Faynt delay. It resets the cache at the start of each game. The model's trained sequence length is also 256; the original actor's 128-frame trajectory-context setting is separate from the cache capacity. These settings form part of the checkpoint and benchmark contracts.
 
 ## Baseline tournament
 
@@ -75,3 +75,7 @@ The included tests use synthetic game states and temporary files. Local-checkpoi
 ## Companion suite
 
 The [Faynt Benchmarks](https://github.com/Na00s/Faynt-Benchmarks) repository includes the initial and expanded schedules, cloud queue, frozen result records, and later Phillip and private zero-delay execution runtime. Its evaluation runtime loads all six published native Faynt checkpoints.
+
+## License
+
+Faynt-owned code and accompanying documentation are available under the [MIT License](LICENSE), copyright 2026 Frisson Labs. Third-party portions retain their original notices. The Slippi Dolphin source patch is licensed under GPL-2.0-or-later. See the [component licensing and runtime notices](THIRD_PARTY_NOTICES.md) for the scope and retained license texts.
