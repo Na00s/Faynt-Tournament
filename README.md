@@ -1,8 +1,8 @@
-# Faynt local evaluation runtime
+# Faynt Tournament
 
 Run local Melee games with Faynt, MIMIC, Slippi-AI, or the game's level 9 CPU. The runtime keeps each policy's observation, controller decoding, and delay contract, coordinates both controller ports at every frame, and retains replay and controller evidence.
 
-This source export contains the audited match machinery and a mirrored baseline tournament scheduler. Historical multi-character Faynt schedules and cloud execution orchestration belong to the companion benchmark suite. The source manifest records the local research snapshot used for this export.
+The tournament scheduler runs mirrored MIMIC versus Slippi-AI Fox matches. The companion [Faynt Benchmarks](https://github.com/Na00s/Faynt-Benchmarks) repository provides multi-character Faynt schedules and cloud execution. The source manifest records the research revision used for this runtime.
 
 ## Local inputs
 
@@ -62,7 +62,7 @@ The standard tournament scheduler registers MIMIC's Fox checkpoint and Slippi-AI
 
 Repeat `--seed` and `--stage` to expand the schedule. `--games-per-block` is even. The runner pairs policy-sampling seeds across ports, randomizes execution order, and records uncontrolled game RNG. Running the same command revalidates eligible existing evidence before resuming on the same host.
 
-Every scheduled game runs in a fresh process. Accepted results require the declared source, checkpoint, environment, game, controller, and replay identities. A conclusive draw earns half a point. Failed or rejected attempts invalidate the report. Aggregate output includes matched blocks and descriptive Wilson intervals; `result_claim_ready` remains false until the registered inferential work is implemented.
+Every scheduled game runs in a fresh process. Accepted results require the declared source, checkpoint, environment, game, controller, and replay identities. A conclusive draw earns half a point. Failed or rejected attempts invalidate the report. Reports include per-port results, matched blocks and descriptive Wilson intervals. The software does not yet implement the planned paired statistical analysis, so `result_claim_ready` remains false.
 
 ## Validation
 
